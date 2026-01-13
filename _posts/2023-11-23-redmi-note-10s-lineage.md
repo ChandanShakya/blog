@@ -2,9 +2,12 @@
 title: "Guide changing from MIUI to LineageOS on Redmi Note 10S"
 layout: post
 comments: true
+description: "Complete step-by-step guide to unlock bootloader, install LineageOS recovery, and flash LineageOS on Redmi Note 10S smartphone."
 ---
 
 This guide will not take any responsibility of damage of one's property.
+
+
 
 Pre-requisites:
 1. Laptop/Desktop with USB 2.0 port (USB 3.0 is not supported i think)

@@ -2,9 +2,12 @@
 title: "Welcome to Chandan Shakya's Blog"
 layout: post
 comments: true
+description: "Welcome to my personal blog where I share insights on web development, Laravel, Linux, and technology. Join me on this journey of learning and sharing."
 ---
 
 Welcome to all the readers to my first blog.
+
+
 
 {% highlight c %}
 #include <stdio.h>
@@ -22,7 +25,7 @@ int main(void) {
 
 > Check out my [stackoverflow][stackoverflow] for my knowledge.
 
-[portfolio]: https://ChandanShakya.com.np/
+[portfolio]: https://chandanshakya.com.np/
 [twitter]: https://twitter.com/zxy_cc_3ag13
 [github]: https://github.com/ChandanShakya
 [stackoverflow]: https://stackoverflow.com/users/18991653

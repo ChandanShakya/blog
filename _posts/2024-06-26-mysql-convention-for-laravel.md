@@ -2,7 +2,12 @@
 title: "SQL Conventions for Laravel"
 layout: post
 comments: true
+description: "Comprehensive database naming conventions and best practices for Laravel applications, including table names, columns, keys, and indexing."
 ---
+
+When working with Laravel, following consistent SQL conventions is crucial for maintaining a clean and efficient database structure. Below are some recommended conventions for naming tables, columns, keys, and indexing in a Laravel application.
+
+
 
 1. **Table Names:**
    - Plural, snake_case (e.g., `users`, `posts`)

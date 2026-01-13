@@ -2,11 +2,14 @@
 title: "Transforming Discord: A Professional Dark Theme for Enhanced User Experience"
 layout: post
 comments: true
+description: "Custom Discord dark theme with clean, compact design. Learn how to install and enhance your Discord experience with reduced eye strain."
 ---
 
 ## Introduction
 
 In the rapidly evolving digital workspace, user interface design plays a crucial role in productivity and user engagement. This custom Discord theme represents a thoughtful approach to reimagining the communication platform's visual experience, focusing on aesthetics, usability, and user comfort.
+
+
 
 ## Theme Overview
 

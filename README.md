@@ -2,7 +2,7 @@
 
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fchandanshakya.com.np%2Fblog&style=social)
 
-Welcome to the repository for my personal blog, hosted at [ChandanShakya.com.np/blog](http://chandanshakya.com.np/blog).
+Welcome to the repository for my personal blog, hosted at [chandanshakya.com.np/blog](http://chandanshakya.com.np/blog).
 
 This blog is built using Jekyll, a static site generator. Each blog post is an individual Markdown file in the `_posts` directory. The naming convention for these files is `YEAR-MONTH-DAY-title.MARKUP`.
 

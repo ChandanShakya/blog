@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<head>
 <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
 <meta charset="{{ site.encoding }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,74 @@
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <link rel="icon" href="img/profile.webp" type="image/x-icon">
 
+{% comment %} SEO Meta Tags {% endcomment %}
+{% if page.description %}
+<meta name="description" content="{{ page.description | escape }}">
+<meta property="og:description" content="{{ page.description | escape }}">
+{% else %}
+<meta name="description" content="{{ site.description | escape }}">
+<meta property="og:description" content="{{ site.description | escape }}">
+{% endif %}
+
+{% comment %} Open Graph / Facebook {% endcomment %}
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:locale" content="{{ page.lang | default: site.lang | default: "en" }}">
+{% if page.date %}
+<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
+{% endif %}
+{% if page.tags %}
+<meta property="article:tag" content="{{ page.tags | join: ', ' }}">
+{% endif %}
+
+{% comment %} Twitter Card {% endcomment %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page.title | default: site.title | escape }}">
+{% if page.description %}
+<meta name="twitter:description" content="{{ page.description | escape }}">
+{% else %}
+<meta name="twitter:description" content="{{ site.description | escape }}">
+{% endif %}
+<meta name="twitter:site" content="@ZXY_CC_3ag13">
+<meta name="twitter:creator" content="@ZXY_CC_3ag13">
+
+{% comment %} JSON-LD Structured Data {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title | default: site.title | escape }}",
+  "description": "{{ page.description | default: site.description | escape }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author | escape }}",
+    "url": "https://chandanshakya.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title | escape }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "/img/profile.webp" | absolute_url }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ page.url | absolute_url }}"
+  }{% if page.tags %},
+  "keywords": "{{ page.tags | join: ', ' }}"{% endif %}
+}
+</script>
+
+{% comment %} Additional SEO {% endcomment %}
+<meta name="robots" content="index, follow">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "/sitemap.xml" | relative_url }}">
+
+{% comment %} Stylesheets {% endcomment %}
 {% if site.show_frame %}
 <link rel="stylesheet" href="{{ "/assets/css/frame.css" | relative_url }}">
 {% else %}
@@ -16,11 +85,18 @@
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
 {% if page.mathjax or site.mathjax %}
 <link rel="stylesheet" href="{{ "/assets/katex/katex.min.css" | relative_url }}">
+{% endif %}
+
+{% comment %} Scripts that need to be in head {% endcomment %}
+{% if page.mathjax or site.mathjax %}
 <script defer src="{{ "/assets/katex/katex.min.js" | relative_url }}"></script>
 <script defer src="{{ "/assets/katex/contrib/auto-render.min.js" | relative_url }}" onload="renderMathInElement(document.body)"></script>
 {% endif %}
 {% if site.comments.disqus_shortname and page.layout == "post" %}<script src="//{{ site.comments.disqus_shortname }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/js/embed.min.js"></script>{% endif %}
+
+</head>
+
 {% if site.show_sidebar or site.sidebar %}{% include sidebar.html %}{% endif %}
 
 {% if site.navigation %}
