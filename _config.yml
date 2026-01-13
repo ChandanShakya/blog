@@ -30,3 +30,4 @@ disqus_shortname: "zxy-cc-3ag13"    # see https://disqus.com/
 
 plugins:
  - jekyll-feed
+ - jekyll-sitemap

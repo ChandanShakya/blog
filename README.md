@@ -18,6 +18,10 @@ The styles for the site are located in the `assets` directory. The main styleshe
 
 The site's main page is `index.html`, and the 404 error page is `404.html`. The site also includes an archive page, `archive.html`, which lists all blog posts.
 
+## SEO & Sitemap
+
+This blog includes automatic sitemap generation for better search engine indexing. The sitemap is generated at `/sitemap.xml` and includes all blog posts and pages. See `SITEMAP_SETUP.md` for detailed configuration.
+
 ## Contributing
 
 If you find a typo, error, or room for improvement, feel free to open an issue or submit a pull request.

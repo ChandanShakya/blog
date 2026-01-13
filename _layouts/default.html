@@ -115,6 +115,9 @@
 <footer>
   <div>{{ site.description | default: site.title }}</div>
   {% include menu.html menu=site.external %}
+  <div style="margin-top: 10px; font-size: 0.9em;">
+    <a href="{{ '/sitemap.xml' | relative_url }}" style="color: inherit;">Sitemap</a>
+  </div>
 </footer>
 {% endif %}
 
